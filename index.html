@@ -21,6 +21,7 @@
 </head>
 <body>
     <div id="countdown"></div>
+    <audio id="audio" src="barka.mp3"></audio>
 
     <script>
         function updateCountdown() {
@@ -44,6 +45,11 @@
                 (hours < 10 ? '0' : '') + hours + ":" +
                 (minutes < 10 ? '0' : '') + minutes + ":" +
                 (seconds < 10 ? '0' : '') + seconds;
+
+            // Sprawdzenie, czy nadeszła godzina 21:37
+            if (hours === 0 && minutes === 0 && seconds === 0) {
+                document.getElementById("audio").play();
+            }
         }
 
         setInterval(updateCountdown, 1000);
