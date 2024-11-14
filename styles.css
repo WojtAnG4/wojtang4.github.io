@@ -35,7 +35,8 @@ p {
 
 .button-container {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
+    gap: 10px;
 }
 
 .discord-button {
@@ -51,4 +52,13 @@ p {
 
 .discord-button:hover {
     background-color: #5e6c8a;
+}
+
+#equipment-options {
+    margin-top: 20px;
+}
+
+#equipment-details {
+    margin-top: 20px;
+    color: #b9bbbe;
 }
