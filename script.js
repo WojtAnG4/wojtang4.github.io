@@ -16,3 +16,8 @@ function showDetails(option) {
     document.getElementById('equipment-details').style.display = 'block';
     document.getElementById('details-text').innerText = detailsText;
 }
+
+function showLinks() {
+    // Pokazuje sekcję z linkiem
+    document.getElementById('links').style.display = 'block';
+}
