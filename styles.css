@@ -62,3 +62,16 @@ p {
     margin-top: 20px;
     color: #b9bbbe;
 }
+
+#links {
+    margin-top: 20px;
+}
+
+.link {
+    color: #7289da;
+    text-decoration: none;
+}
+
+.link:hover {
+    text-decoration: underline;
+}
