@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Licznik do 21:37</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-image: url('grafika.png'); /* Dodanie tła */
+            background-size: cover; /* Dopasowanie tła do całego okna */
+            background-position: center; /* Wyśrodkowanie tła */
+            color: white; /* Kolor tekstu dla lepszej widoczności na tle */
+        }
+        #countdown {
+            font-size: 48px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Cień tekstu dla lepszej czytelności */
+        }
+    </style>
+</head>
+<body>
+    <div id="countdown"></div>
+    <audio id="audio" src="barka.mp3"></audio>
+
+    <script>
+        function updateCountdown() {
+            const now = new Date();
+            const target = new Date();
+            target.setHours(21);
+            target.setMinutes(37);
+            target.setSeconds(0);
+            target.setMilliseconds(0);
+
+            if (now > target) {
+                target.setDate(target.getDate() + 1);
+            }
+
+            const diff = target - now;
+            const hours = Math.floor(diff / 1000 / 60 / 60);
+            const minutes = Math.floor((diff / 1000 / 60) % 60);
+            const seconds = Math.floor((diff / 1000) % 60);
+
+            document.getElementById("countdown").innerText = 
+                (hours < 10 ? '0' : '') + hours + ":" +
+                (minutes < 10 ? '0' : '') + minutes + ":" +
+                (seconds < 10 ? '0' : '') + seconds;
+
+            // Sprawdzenie, czy nadeszła godzina 21:37
+            if (hours === 0 && minutes === 0 && seconds === 0) {
+                document.getElementById("audio").play();
+            }
+        }
+
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+    </script>
+</body>
+</html>
