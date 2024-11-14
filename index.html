@@ -8,13 +8,22 @@
 </head>
 <body>
     <div class="container">
-        <h1>Test!</h1>
+        <h1>Witaj na mojej stronie!</h1>
         <p>Test</p>
         <div class="button-container">
-            <button class="discord-button">1</button>
-            <button class="discord-button">2</button>
-            <button class="discord-button">Sprzęt</button>
+            <button class="discord-button" onclick="showEquipmentOptions()">Sprzęt</button>
+        </div>
+        
+        <div id="equipment-options" style="display: none;">
+            <button class="discord-button" onclick="showDetails('laptop')">Main Laptop</button>
+            <button class="discord-button" onclick="showDetails('pc')">PCza40PLN</button>
+        </div>
+        
+        <div id="equipment-details" style="display: none;">
+            <p id="details-text"></p>
         </div>
     </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
