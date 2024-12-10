@@ -63,6 +63,16 @@ p {
     color: #b9bbbe;
 }
 
+#equipment-details ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+#equipment-details li {
+    margin-bottom: 5px;
+}
+
 #links {
     margin-top: 20px;
 }
